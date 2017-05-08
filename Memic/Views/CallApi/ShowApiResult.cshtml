@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "ShowApiResult";
+}
+
+
+
+<h3>Client Authorization - Not User Authentication</h3>
+<div class="well">This Application has access to the API, but the world does not.  If you go to the API directly at
+    <a href="@IdentityServerConfig.Endpoint.APIIdentityUri">@IdentityServerConfig.Endpoint.APIIdentityUri</a>, you should be denied.
+    <br /><br />
+    If we want to have User Authentication for this API,  we place an [Authorize] decorator above the controller.<br /><br />
+    Or for more control based on user roles,  we add [ResourceAuthorize("Write", "MyAPI")] and  [HandleForbidden] decorators above the controller and add the task to the AuthorizationManager.
+</div>
+<h3>Result</h3>
+<pre>@ViewBag.Json</pre>
+
+
